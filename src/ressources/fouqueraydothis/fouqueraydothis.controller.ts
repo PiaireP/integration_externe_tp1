@@ -3,7 +3,7 @@ import { FouquerayDoThisServices } from './fouqueraydothis.service'
 import { LegumesServices } from '../legumes/legumes.service'
 
 //Creation router
-const FouqerayContainController = Router()
+const FouqerayDoThisController = Router()
 
 //Services nécéssaire
 const service = new FouquerayDoThisServices()
@@ -11,7 +11,7 @@ const legumesService = new LegumesServices();
 
 
 //Retourne si le produit passer en paramètre est réalisé chez Fouqeray
-FouqerayContainController.get('/:id', async (req, res) => {
+FouqerayDoThisController.get('/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
         if (isNaN(id)) {
@@ -24,12 +24,15 @@ FouqerayContainController.get('/:id', async (req, res) => {
         }
         var productsSearch = await service.findBio(legume.name);
 
-        console.log(productsSearch)
-        res.json(productsSearch);
+        if(productsSearch) {
+            res.send("Oui");
+        } else {
+            res.send("Non");
+        }
     } catch (e) {
         res.status(500).send("Erreur lors de la récupération")
     }
   
 })
 
-export { FouqerayContainController }
+export { FouqerayDoThisController }

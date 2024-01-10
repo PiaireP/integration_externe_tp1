@@ -4,7 +4,7 @@ import { LegumesController } from './ressources/legumes/legumes.controller';
 import { UnknownRoutesHandler } from './middlewares/unknowRoutes.handler';
 import { ExceptionsHandler } from './middlewares/exceptions.handler';
 import { ProductFromFouquerayController } from './ressources/fouqueraygregate/productfouqueray.controller';
-import { FouqerayContainController } from './ressources/fouqueraycontain/fouqueraycontain.controller';
+import { FouqerayDoThisController } from './ressources/fouqueraydothis/fouqueraydothis.controller';
 
 const app = express();
 
@@ -12,7 +12,7 @@ app.use(express.json())
 
 app.use('/legumes', LegumesController)
 app.use('/fouqueray', ProductFromFouquerayController)
-app.use('/fouquerayContain', FouqerayContainController);
+app.use('/fouquerayDoThis', FouqerayDoThisController);
 app.all('*', UnknownRoutesHandler)
 
 

@@ -8,7 +8,7 @@ const LegumesController = Router()
 //Service nécéssaire
 const service = new LegumesServices()
 
-// trouve tou les légumes
+// trouve tous les légumes
 LegumesController.get('/', (req, res) => {
   return res
     .status(200)
