@@ -10,4 +10,4 @@ routes agregate : <br>
 http://localhost:3000/fouqueray : Donne tout les produits réalisé chez fouqueray <br>
 
 routes mixed : <br>
-http://localhost:3000/fouquerayContain/idDuLegume : Retourne si oui ou non fouqueray realise ce légume <br>
+http://localhost:3000/fouquerayDoThis/idDuLegume : Retourne si oui ou non fouqueray realise ce légume <br>
